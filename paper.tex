@@ -37,7 +37,14 @@
 \end{split}\end{equation}
 }
 
-
+%% %%%%%%%%%%%%%%
+%% BE comment:  How about trying for Nature? They have a section called   
+%%  Computational platforms and environments 
+%%  https://www.nature.com/subjects/computational-platforms-and-environments
+%%  and if Nature rejects, they might suggest Nature communications which is also a good journal;
+%%  feel if this is published in G3 it would be selling this good work very short
+%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
 \begin{document}
 
@@ -112,8 +119,8 @@ time~\citep{hudson1990gene}, the coalescent with recombination is
 far more challenging to simulate.
 % Sentence is too long...
 Programs such as Hudson's classical \ms~\citep{hudson2002generating}
-can only simulate short segments under the influence of recombination,
-and, until recently, we had to resort to
+can only simulate short segments under the influence of recombination. 
+Until recently, we had to resort to
 approximate models of recombination~\citep{mcvean2005approximating,staab2014scrm}
 if we wished to simulate whole chromosomes.
 
@@ -338,11 +345,14 @@ gene genealogies \citep{Gillespie909,DS04}.
 Multiple-merger coalescents, in which a random number of ancestral
 lineages may merge at a given time in one group, and only one such
 group of lineages can merge at any given time (asynchronous multiple
-mergers), are referred to as $\Lambda$-coalescents; the rate at which  a given group of $k$ lineages out of a total of  $b$ lineages merges  is given by ($a\ge  0$ constant)
+mergers), are referred to as $\Lambda$-coalescents; the rate at which 
+a given group of $k$ lineages out of a total of  $b$ lineages merges  
+is given by ($a\ge  0$ constant)
 \begin{equation}\label{lambdabk}
 \lambda_{b, k} =  \int_0^1  x^{k-2}(1-x)^{b-k}\Lambda(dx) + a\one{k=2}, \quad 2 \le k \le b, 
 \end{equation}
-where $\Lambda$ is a finite measure on the  (Borel subsets of)  unit interval without an atom at zero \citep{DK99,P99,S99}.    The  total rate  is given by
+where $\Lambda$ is a finite measure on the  (Borel subsets of)  unit interval without an atom at zero \citep{DK99,P99,S99}.   
+The  total rate  is given by
 \be\label{lambdab}
  \lambda_{b} = \int_0^1 \left(1 - (1-x)^{b} - bx(1-x)^{b-1} \right)x^{-2}\Lambda(dx) + \binom{b}{2},
 \ee
@@ -455,7 +465,13 @@ haploid version, in each generation individuals independently produce
 random numbers of juveniles, where the random  number of juveniles $(X)$ produced by
 a given individual  has the stable law \be\label{jX} \lim_{k\to
 \infty} C k^\alpha \prb{X \ge k} = 1 \ee with index $\alpha > 0$, and
-$C > 0$ is a normalising constant.   One can interpret  Eq.\ \eqref{jX} as  stating the form of the  probability distribution  for number of juveniles at least on the order of the population size.     If the random  total number of juveniles $(S_N)$ produced in this way is at least the population size $(N)$, then one samples  $N$ juveniles uniformly at random without replacement to form the next generation of  reproducing individuals; if  $S_N < N$ one simply  carries on with  the same  set of individuals.   However,   assuming  $\EE{X} > 1$, one can show that $\prb{S_N < N}$ decays exponentially fast in $N$ \citep{schweinsberg03}.         If $\alpha \ge 2$ the ancestral
+$C > 0$ is a normalising constant.   One can interpret  Eq.\ \eqref{jX} as 
+stating the form of the  probability distribution  for number of juveniles at least on the order of the population size.   
+If the random  total number of juveniles $(S_N)$ produced in this way is at least the population size $(N)$,
+then one samples  $N$ juveniles uniformly at random without replacement to form the next generation of  reproducing individuals;
+if  $S_N < N$ one simply  carries on with  the same  set of individuals.  
+However,   assuming  $\EE{X} > 1$, one can show that $\prb{S_N < N}$ decays exponentially fast in $N$ \citep{schweinsberg03}.   
+If $\alpha \ge 2$ the ancestral
 process converges to the Kingman-coalescent; if $1 \le \alpha < 2$ the
 ancestral process converges to a specific case of a
 $\Lambda$-coalescent, where the $\Lambda$ measure in Eq.\
@@ -464,7 +480,11 @@ probability distribution, i.e.\
 \be\label{Fbeta}
     \Lambda(dx) = \one{0< x \le 1} \frac{1}{B(2-\alpha,\alpha)} x^{1 - \alpha}(1-x)^{\alpha - 1}  dx,
 \ee
-where $B(2-\alpha,\alpha)$ is the beta function $B(a,b) = \Gamma(a)\Gamma(b)/\Gamma(a+b)$, $a,b > 0$ \citep{schweinsberg03}.    This model has been adapted to diploid populations  by                      \cite{BLS15}, where  the resulting coalescent process  is a  four-fold $\Xi$-coalescent on  $(x/4, x/4, x/4, x/4, 0, 0, \ldots)$, where $x$ is a random variate with  the Beta$(2-\alpha,\alpha)$ distribution.  The merger rate (see Eq.\ \eqref{xi}) is then ($1 \le r \le 4$)
+where $B(2-\alpha,\alpha)$ is the beta function $B(a,b) = \Gamma(a)\Gamma(b)/\Gamma(a+b)$, $a,b > 0$ \citep{schweinsberg03}.   
+This model has been adapted to diploid populations  by  \cite{BLS15},
+where  the resulting coalescent process  is a  four-fold $\Xi$-coalescent on  $(x/4, x/4, x/4, x/4, 0, 0, \ldots)$, 
+where $x$ is a random variate with  the Beta$(2-\alpha,\alpha)$ distribution.  
+The merger rate (see Eq.\ \eqref{xi}) is then ($1 \le r \le 4$)
 \be\label{xibeta}
    \lambda_{b;k_1, \ldots, k_r} = \sum_{\ell = 0}^{ (b - k)\wedge (4-r) } \binom{b-k}{\ell} \frac{ (4)_{r+\ell} }{4^{k+\ell}} \frac{B(k+\ell - \alpha, b-k-\ell + \alpha ) }{B(2-\alpha,\alpha)}
 \ee
@@ -481,17 +501,28 @@ arbitrarily large.  With this in mind, we also consider an adaptation
 of the Schweinsberg model, where the random number of juveniles $(X)$
 produced by a   given parent pair  is distributed according to
 \be\label{jtr}
-  \prb{X=k} =   \one{1 \le k \le \phi(N)} \frac{\phi(N+1)^\alpha }{ \phi(N+1)^\alpha - 1 }  \left( \frac{1}{k^\alpha} - \frac{1}{(k+1)^\alpha}  \right) ,
+  \prb{X=k} =   \one{1 \le k \le \phi(N)} \frac{\phi(N+1)^\alpha }{ \phi(N+1)^\alpha - 1 }  \left( \frac{1}{k^\alpha} - \frac{1}{(k+1)^\alpha}  \right),
 \ee
-where $\phi(N)$ is a deterministic strict upper bound on the number of juveniles produced by  any given parent pair (see also \citep{Eldon2018}).   One can follow the calculations in  \citep{schweinsberg03} or \citep{BLS15}  to show  that  if $1 < \alpha < 2$   then  $(k = k_1 + \cdots + k_r)$ then the merger rate (see Eq.\ \eqref{xibeta}) is
+where $\phi(N)$ is a deterministic strict upper bound on the number of juveniles produced by  any given parent pair (see also \citep{Eldon2018}). 
+One can follow the calculations in  \citep{schweinsberg03} or \citep{BLS15}  to show  that 
+if $1 < \alpha < 2$   then  $(k = k_1 + \cdots + k_r)$ then the merger rate (see Eq.\ \eqref{xibeta}) is
 \be
    \lambda_{b;k_1, \ldots, k_r} =  \sum_{\ell = 0}^{ (b - k)\wedge (4-r) } \binom{b-k}{\ell} \frac{ (4)_{r+\ell} }{4^{k+\ell}} \frac{B(M; k+\ell - \alpha, b-k-\ell + \alpha ) }{B(M;2-\alpha,\alpha)}
 \ee
 with $B(z;a,b) := \int_0^z t^{a-1}(1-t)^{b-1}dt$ for  $a,b>0$ and $0< z\le 1$, and
 \be
-M :=  \frac{K}{K+m} \one{\phi(N) = KN} + \one{\phi(N)/N \to \infty }
+M :=  \frac{K}{K+m(\alpha)} \one{\phi(N)/N \to K} + \one{\phi(N)/N \to \infty }
 \ee
-where $K > 0$ is a constant and  $m := \lim_{N\to \infty} \EE{X} = 1 + 2^{1-\alpha}/(\alpha - 1)$ \citep{CDEE2020,AEKKZ2020}.    In other words,  the measure $(\Lambda)$ driving the multiple mergers is of the same form as in Eq.\ \eqref{Fbeta}  with $0 < x \le M$ in the case $1 < \alpha < 2$ and $\phi(N) \ge KN$.   If $\alpha \ge 2$ or $\phi(N)/N \to 0$ then  the  ancestral process converges (in the sense of convergence of  finite-dimensional distributions) to  the Kingman-coalescent \citep{CDEE2020,AEKKZ2020}.
+where $K > 0$ is a constant and  $m(\alpha) := \lim_{N\to \infty} \EE{X} = 1 + 2^{1-\alpha}/(\alpha - 1)$ \citep{CDEE2020,AEKKZ2020}.   
+In other words,  the measure $(\Lambda)$ driving the multiple mergers is of the same form as in Eq.\ \eqref{Fbeta} 
+with $0 < x \le M$ in the case $1 < \alpha < 2$ and $\phi(N)/N \not\to 0$.  
+In the case $\phi(N)/N \to K$  wee see that  $m(\alpha)$ increases as $\alpha \to 1$, 
+thus reducing the  truncation point $M$.   
+
+
+If $\alpha \ge 2$ or $\phi(N)/N \to 0$ then  the  ancestral process converges 
+(in the sense of convergence of  finite-dimensional distributions) 
+to  the Kingman-coalescent \citep{CDEE2020,AEKKZ2020}.  
 
 
 
